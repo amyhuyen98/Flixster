@@ -10,9 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.amyhuyen.flixster.R;
-import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
@@ -57,8 +58,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         String imageUrl = config.getImgUrl(config.getPosterSize(), movie.getPosterPath());
 
         // load image using glide
-        Glide.with(context)
+        GlideApp.with(context)
                 .load(imageUrl)
+                .transform(new RoundedCornersTransformation( 15, 0))
+                .placeholder(R.drawable.flicks_movie_placeholder)
+                .error(R.drawable.flicks_movie_placeholder)
                 .into(holder.ivPosterImage);
     }
 
