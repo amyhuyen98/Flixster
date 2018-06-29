@@ -2,6 +2,7 @@ package com.amyhuyen.flixster;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -35,6 +36,9 @@ public class MovieDetailsActivity extends AppCompatActivity {
         tvReleaseDate = (TextView) findViewById(R.id.tvReleaseDate);
         ivBackdropImage = (ImageView) findViewById(R.id.ivBackdropImage);
         ivPosterImage = (ImageView) findViewById(R.id.ivPosterImage);
+
+        // scrolling overview
+        tvOverview.setMovementMethod(new ScrollingMovementMethod());
 
         // unwrap the movie passed in via intent, using its simple name as a key
         movie = (Movie) Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
