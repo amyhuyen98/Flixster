@@ -1,6 +1,7 @@
 package com.amyhuyen.flixster;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
@@ -12,17 +13,20 @@ import com.amyhuyen.flixster.models.Movie;
 
 import org.parceler.Parcels;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MovieDetailsActivity extends AppCompatActivity {
     // the movie to display
     Movie movie;
 
     // the view objects
-    TextView tvTitle;
-    TextView tvOverview;
-    RatingBar rbVoteAverage;
-    TextView tvReleaseDate;
-    ImageView ivBackdropImage;
-    ImageView ivPosterImage;
+    @BindView (R.id.tvTitle) TextView tvTitle;
+    @BindView (R.id.tvOverview) TextView tvOverview;
+    @BindView (R.id.rbVoteAverage) RatingBar rbVoteAverage;
+    @BindView (R.id. tvReleaseDate) TextView tvReleaseDate;
+    @Nullable @BindView (R.id.ivBackdropImage) ImageView ivBackdropImage;
+    @Nullable @BindView (R.id.ivPosterImage) ImageView ivPosterImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +34,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_movie_details);
 
         // resolve the view objects
-        tvTitle = (TextView) findViewById(R.id.tvTitle);
-        tvOverview = (TextView) findViewById(R.id.tvOverview);
-        rbVoteAverage = (RatingBar) findViewById(R.id.rbVoteAverage);
-        tvReleaseDate = (TextView) findViewById(R.id.tvReleaseDate);
-        ivBackdropImage = (ImageView) findViewById(R.id.ivBackdropImage);
-        ivPosterImage = (ImageView) findViewById(R.id.ivPosterImage);
+        ButterKnife.bind(this);
 
         // scrolling overview
         tvOverview.setMovementMethod(new ScrollingMovementMethod());
