@@ -19,6 +19,7 @@
 
     <TextView
         android:id="@+id/tvTitle"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -37,6 +38,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/tvTitle"
         android:layout_toEndOf="@+id/ivBackdropImage"
-        android:textColor="@color/lightGrey"
-        android:text="TextView" />
+        android:alpha="0.40"
+        android:text="TextView"
+        android:textColor="@color/lightGrey" />
 </RelativeLayout>

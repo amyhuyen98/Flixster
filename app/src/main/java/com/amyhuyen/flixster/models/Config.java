@@ -39,7 +39,5 @@ public class Config {
         return posterSize;
     }
 
-    public String getBackdropSize() {
-        return backdropSize;
-    }
+    public String getBackdropSize() { return backdropSize; }
 }
