@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/darcula"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,7 +19,8 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/lightGrey"/>
 
     <RatingBar
         android:id="@+id/rbVoteAverage"
@@ -40,7 +42,8 @@
         android:layout_below="@+id/tvReleaseDate"
         android:text="TextView"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="45dp" />
+        tools:layout_editor_absoluteY="45dp"
+        android:textColor="@color/lightGrey"/>
 
     <TextView
         android:id="@+id/tvReleaseDate"
@@ -48,5 +51,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/rbVoteAverage"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textColor="@color/lightGrey"/>
 </RelativeLayout>
