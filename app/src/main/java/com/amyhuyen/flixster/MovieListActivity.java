@@ -128,6 +128,17 @@ public class MovieListActivity extends AppCompatActivity {
         });
     }
 
+    // get the videos from the API
+    private void getVideo(){
+        // create the url
+        String url = API_BASE_URL + "/movie/{movie_id}/videos";
+        // set the request parameters
+        RequestParams params = new RequestParams();
+        params.put(API_KEY_PARAM, getString(R.string.api_key));
+        // execute a GET request expecting a JSON object response
+        }
+
+
     // handle error, log and alert user
     private void logError(String message, Throwable error, boolean alertUser){
         // always log the error

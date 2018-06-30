@@ -42,6 +42,7 @@
         android:layout_below="@+id/ivPosterImage"
         android:alpha="0.55"
         android:text="TextView"
+        android:padding = "5dp"
         android:scrollbars="vertical"
         android:textColor="@color/lightGrey"
         tools:layout_editor_absoluteX="0dp"
@@ -64,6 +65,8 @@
         android:layout_height="216dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:clickable="true"
+        android:onClick="imageClick"
         android:cropToPadding="true"
         android:src="@drawable/flicks_backdrop_placeholder" />
 

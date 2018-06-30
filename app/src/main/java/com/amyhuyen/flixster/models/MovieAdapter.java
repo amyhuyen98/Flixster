@@ -29,6 +29,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
     // context for rendering
     Context context;
 
+    // build url for poster image
+    public static final String imageUrl = " ";
+    public static final String backdropUrl = "  ";
+
     // initialize with list
     public MovieAdapter(ArrayList<Movie> movies) {
         this.movies = movies;
@@ -124,6 +128,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
                 Intent intent = new Intent(context, MovieDetailsActivity.class);
                 // serialize the movie using parceler, use its short name as a key
                 intent.putExtra(Movie.class.getSimpleName(), Parcels.wrap(movie));
+                intent.putExtra(imageUrl,config.getImgUrl(config.getPosterSize(),movie.getPosterPath()));
+                intent.putExtra(backdropUrl, config.getImgUrl(config.getBackdropSize(),movie.getBackdropPath()));
                 // show the activity
                 context.startActivity(intent);
             }
