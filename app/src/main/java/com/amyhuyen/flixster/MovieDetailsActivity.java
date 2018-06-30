@@ -53,6 +53,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
         // resolve the view objects
         ButterKnife.bind(this);
 
+        client = new AsyncHttpClient();
+
         // scrolling overview
         tvOverview.setMovementMethod(new ScrollingMovementMethod());
 
@@ -84,11 +86,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
                 .error(R.drawable.flicks_backdrop_placeholder)
                 .into(ivBackdropImage);
     }
-//
-//
-//    private void getVideo(){
+
+//    @OnClick(R.id.ivBackdropImage)
+//    public void getVideo(){
 //        // create the url
-//        String url = API_BASE_URL + "/movie/{movie_id}/videos";
+//        String url = API_BASE_URL + "/movie/"+ movie.getId() +"/videos";
 //        // set the request parameters
 //        RequestParams params = new RequestParams();
 //        params.put(API_KEY_PARAM, getString(R.string.api_key)); // API key, always required
@@ -98,9 +100,12 @@ public class MovieDetailsActivity extends AppCompatActivity {
 //            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
 //                // load the results into movie list
 //                try {
-//                    JSONArray result = response.getJSONArray("result");
-//                    JSONObject vid1 = result.getJSONObject(1);
+//                    JSONArray result = response.getJSONArray("results");
+//                    JSONObject vid1 = result.getJSONObject(0);
 //                    key = (String) vid1.get("key");
+//                    Intent intent = new Intent(MovieDetailsActivity.this, MovieTrailerActivity.class);
+//                    intent.putExtra("key", key);
+//                    startActivity(intent);
 //                } catch (JSONException e) {
 //                    logError("Failed to get video", e, true);
 //                }
@@ -110,18 +115,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
 //            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
 //                logError("Failed to get data from now playing endpoint", throwable, true);
 //            }
+//            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject object){
+//                logError("Failed to get data from now playing endpoint", throwable, true);
+//            }
 //        });
 //    }
-//
-//    .setOnClickListener(new View.OnClickListener() {
-//
-//        @Override
-//        public void onClick(View v) {
-//
-//            Toast.makeText(MainActivity.this, "You clicked on ImageView", Toast.LENGTH_LONG).show();
-//
-//        }
-//    });
 //
 //    // handle error, log and alert user
 //    private void logError(String message, Throwable error, boolean alertUser){
